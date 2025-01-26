@@ -1,0 +1,47 @@
+.sidebar {
+    background: #ffffff;
+    padding: 2rem;
+    border-right: 1px solid #dfe6e9;
+    height: fit-content;
+    min-width: 280px;
+  }
+  
+  .filterGroup {
+    margin-bottom: 2rem;
+  }
+  
+  .filterGroup h4 {
+    color: #2d3436;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .filterGroup label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #636e72;
+    cursor: pointer;
+  }
+  
+  .filterGroup input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: #0984e3;
+  }
+  
+  .priceRange {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #dfe6e9;
+    }
+  }
