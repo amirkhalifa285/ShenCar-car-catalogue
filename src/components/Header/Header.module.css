@@ -1,6 +1,6 @@
+/* Header.module.css */
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
     background: #ffffff;
@@ -8,28 +8,60 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    gap: 2rem; /* Space between logo container and other elements */
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex: 1; /* Take available space */
+    max-width: 800px; /* Adjust as needed */
   }
   
   .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #2d3436;
-    text-decoration: none;
+    color: #3563E9;
+    white-space: nowrap; /* Prevent logo text wrapping */
   }
-  
+
+  .searchContainer {
+    position: relative;
+    
+  }
+
   .searchInput {
-    padding: 0.8rem 1.5rem;
+    margin-left: 7rem;
+    padding: 0.8rem 2.5rem 0.8rem 1.5rem; /* Add right padding for icon */
     border: 2px solid #dfe6e9;
     border-radius: 30px;
-    width: 400px;
     font-size: 1rem;
     transition: all 0.3s;
+    flex: 1; /* Take remaining space in container */
+    min-width: 400px; /* Minimum search input width */
+  }
+
+  .searchIcon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #636e72;
+    font-size: 1.2rem;
+    pointer-events: none; /* Makes the icon non-interactive */
   }
   
   .searchInput:focus {
     outline: none;
     border-color: #0984e3;
     box-shadow: 0 0 8px rgba(9,132,227,0.2);
+  }
+
+  .favoriteIcon {
+    margin-left: auto; /* Push to far right */
+    color: gray;
+    cursor: pointer;
   }
   
   @media (max-width: 768px) {
@@ -39,7 +71,17 @@
       padding: 1rem;
     }
   
+    .logoContainer {
+      width: 100%;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
     .searchInput {
       width: 100%;
+    }
+  
+    .logo {
+      font-size: 1.5rem;
     }
   }

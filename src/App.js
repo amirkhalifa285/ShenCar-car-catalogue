@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import carsData from './car_data/cars.json'; // Corrected path
+import carsData from './car_data/cars.json';
 import Header from './components/Header/Header';
 import FiltersSidebar from './components/FiltersSidebar/FiltersSidebar';
 import CarGrid from './components/CarGrid/CarGrid';
-import './App.css';
+import Footer from './components/Footer/Footer';
+import './index.css';
 
 function App() {
   const [cars, setCars] = useState([]);
@@ -14,18 +15,25 @@ function App() {
   });
 
   useEffect(() => {
-    if (carsData) { // Null check
-      setCars(carsData);
+    if (carsData) {
+      const uniqueCars = carsData.map((car, index) => ({
+        ...car,
+        id: car.id || Date.now() + index
+      }));
+      setCars(uniqueCars);
     }
   }, []);
 
   return (
     <div className="app">
       <Header />
-      <div className="main-content">
+
+      <main className="main-content">
         <FiltersSidebar filters={filters} setFilters={setFilters} />
         <CarGrid cars={cars} />
-      </div>
+      </main>
+
+      <Footer />
     </div>
   );
 }
