@@ -2,8 +2,8 @@
     background: #ffffff;
     padding: 2rem;
     border-right: 1px solid #dfe6e9;
-    height: fit-content;
     min-width: 280px;
+    position: sticky;
   }
   
   .filterGroup {
