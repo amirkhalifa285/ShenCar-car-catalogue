@@ -1,48 +1,65 @@
-/* components/CarGrid/CarGrid.module.css */
-.carGrid {
+.carGridWrapper {
+    width: 100%;
+    padding: 0rem;
+    box-sizing: border-box; /* Ensure padding doesn't add overflow */
+  }
+  
+  .carCatalogueHeader {
+    width: 100%;
+    text-align: left; /* Align header text to the left */
+    padding-left: 1rem; /* Add left padding for alignment */
+    margin-bottom: 1rem; /* Space below the header */
+  }
+  
+  .carCatalogueHeader .headerText {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .carGrid {
     display: grid;
     gap: 4rem;
-    padding: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
-    /* Fixed column width */
-    justify-content: left;
-    width: 100%;
-}
-
-.noResults {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    justify-content: center; /* Center the grid items */
+    max-width: 100%; /* Prevent grid from exceeding the container */
+  }
+  
+  .noResults {
     grid-column: 1 / -1;
     text-align: center;
     padding: 4rem;
     color: #636e72;
-}
-
-.noResults h3 {
+  }
+  
+  .noResults h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #2d3436;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
     .carGrid {
-        grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
-}
-
-@media (max-width: 992px) {
+  }
+  
+  @media (max-width: 992px) {
     .carGrid {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     .carGrid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
     }
-
+  
     .noResults {
-        padding: 2rem;
+      padding: 2rem;
     }
-}
+  }
+  
