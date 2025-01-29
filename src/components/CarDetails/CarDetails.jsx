@@ -24,7 +24,15 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
   const isFavorite = favorites.some((fav) => fav.id === car.id);
 
   return (
-    <Box sx={{ maxWidth: "1200px", margin: "0 auto", padding: "2rem" }}>
+    <Box sx={{
+        display: "flex",
+        gap: "32px",
+        alignItems: "stretch",
+        paddingLeft: "32px",
+        paddingRight: "32px",
+        flexWrap: "wrap", // Allow wrapping for smaller screens
+        minHeight: "auto", // Let content expand dynamically
+      }}>
       <Box sx={{ marginBottom: "2rem" }}>
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
           Car Details
@@ -38,7 +46,8 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
             display: "flex",
             flexDirection: "column",
             width: "492px",
-            height: "508px",
+            minHeight: "auto",
+            height: "100%",
             borderRadius: "10px 0 0 0",
           }}
         >
@@ -46,7 +55,7 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
           <Box
             sx={{
               position: "relative",
-              width: "492px",
+              width: "468px",
               height: "360px",
               borderRadius: "10px 0 0 0",
               backgroundColor: "#3563E9", // Blue background
@@ -81,7 +90,7 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
           </Box>
 
           {/* Thumbnails */}
-          <Box sx={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
+          <Box sx={{ display: "flex", gap: "1rem", marginTop: "1rem", width: "468px" }}>
             {car.images.slice(0, 3).map((img, index) => (
               <Box
                 key={index}

@@ -25,13 +25,17 @@ body {
   padding: 0rem;
   display: flex;/* Add spacing inside */
   flex: 1;
+  width: 100vw;
+  align-items: stretch;
 }
-
 
 .main-content {
   flex: 1;
   display: flex;
   gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .car-grid-wrapper {

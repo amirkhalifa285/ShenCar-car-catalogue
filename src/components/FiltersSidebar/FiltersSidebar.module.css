@@ -6,7 +6,7 @@
   position: sticky;
   max-width: 100%;
   box-sizing: border-box;
-  height: auto;
+  height: 100%;
 }
 
 .filterGroup {
@@ -39,7 +39,12 @@
   width: 100%;
   margin-top: 1rem;
 }
-
+@media (max-width: 1024px) {
+  .sidebar {
+    height: auto; /* Allow flexible height on smaller screens */
+    min-height: 100vh; /* Stretch fully */
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .sidebar {

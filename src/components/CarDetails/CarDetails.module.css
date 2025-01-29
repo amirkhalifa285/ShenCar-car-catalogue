@@ -11,14 +11,16 @@
   
   .content {
     display: flex;
-    gap: 2rem;
+    gap: 32px;
     align-items: stretch;
+    justify-content: space-between;
   }
   
   /* Image Section */
   .imageSection {
     flex: 1;
     min-width: 492px;
+    margin-left: 32px;
   }
   
   .imageContainer {
@@ -62,7 +64,10 @@
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    min-height: 360px;
+    min-height: auto;
+    height: 100%;
+    margin-left: 32px;
+    margin-right: 32px;
   }
   
   .detailsHeader {
@@ -164,6 +169,17 @@
     }
   }
   
+  @media (max-width: 1024px) {
+    .content {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center;
+    }
+  
+    .imageSection, .detailsSection {
+      width: 100%; /* Allow full width */
+    }
+  }
+
   @media (max-width: 768px) {
     .container {
       padding: 1rem;
