@@ -28,7 +28,9 @@
     "reviews": 320,
     "stars": 4.5,
     "images": [
-      "/images/honda-crv.jpeg"
+      "/images/honda-crv.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Safety and comfort while driving...",
     "details": "All New Twice SUV design..."
@@ -36,15 +38,17 @@
   {
     "id": 3,
     "name": "Tesla Model S",
-    "type": "Electric",
-    "capacity": 5,
+    "type": "Coupe",
+    "capacity": 4,
     "price": 150,
     "steering": "Automatic",
     "gasoline": 0,
     "reviews": 500,
     "stars": 5,
     "images": [
-      "/images/tesla-model-s.jpeg"
+      "/images/tesla-model-s.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Fully electric car with superior performance...",
     "details": "The Model S is built for speed and range..."
@@ -52,7 +56,7 @@
   {
     "id": 4,
     "name": "Ford Mustang",
-    "type": "Muscle",
+    "type": "Sport",
     "capacity": 4,
     "price": 100,
     "steering": "Manual",
@@ -60,7 +64,9 @@
     "reviews": 410,
     "stars": 4.2,
     "images": [
-      "/images/ford-mustang.jpg"
+      "/images/ford-mustang.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "An iconic American muscle car...",
     "details": "Powerful V8 engine with modern design features..."
@@ -69,14 +75,16 @@
     "id": 5,
     "name": "Toyota Corolla",
     "type": "Sedan",
-    "capacity": 5,
+    "capacity": 4,
     "price": 50,
     "steering": "Automatic",
     "gasoline": 55,
     "reviews": 280,
     "stars": 4,
     "images": [
-      "/images/toyota-corolla.png"
+      "/images/toyota-corolla.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Reliable and efficient daily driver...",
     "details": "The Corolla combines practicality with affordability..."
@@ -85,14 +93,16 @@
     "id": 6,
     "name": "Chevrolet Tahoe",
     "type": "SUV",
-    "capacity": 7,
+    "capacity": 6,
     "price": 90,
     "steering": "Automatic",
     "gasoline": 80,
     "reviews": 340,
     "stars": 4.3,
     "images": [
-      "/images/chevrolet-tahoe.jpg"
+      "/images/chevrolet-tahoe.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Spacious and powerful family SUV...",
     "details": "Built for off-road and urban adventures..."
@@ -100,7 +110,7 @@
   {
     "id": 7,
     "name": "Mazda MX-5 Miata",
-    "type": "Convertible",
+    "type": "Coupe",
     "capacity": 2,
     "price": 70,
     "steering": "Manual",
@@ -108,7 +118,9 @@
     "reviews": 420,
     "stars": 4.6,
     "images": [
-      "/images/mazda-mx5.jpg"
+      "/images/mazda-mx5.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Lightweight and fun-to-drive convertible...",
     "details": "Experience the joy of open-top driving..."
@@ -116,15 +128,17 @@
   {
     "id": 8,
     "name": "BMW X5",
-    "type": "Luxury SUV",
-    "capacity": 5,
+    "type": "SUV",
+    "capacity": 4,
     "price": 110,
     "steering": "Automatic",
     "gasoline": 60,
     "reviews": 400,
     "stars": 4.7,
     "images": [
-      "/images/bmw-x5.jpg"
+      "/images/bmw-x5.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Luxury SUV with exceptional comfort...",
     "details": "Combining performance and sophistication..."
@@ -132,7 +146,7 @@
   {
     "id": 9,
     "name": "Jeep Wrangler",
-    "type": "Off-Road",
+    "type": "SUV",
     "capacity": 4,
     "price": 95,
     "steering": "Manual",
@@ -140,7 +154,9 @@
     "reviews": 380,
     "stars": 4.4,
     "images": [
-      "/images/jeep-wrangler.jpg"
+      "/images/jeep-wrangler.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Built for rugged terrains and adventures...",
     "details": "A classic off-road vehicle with modern upgrades..."
@@ -149,14 +165,196 @@
     "id": 10,
     "name": "Audi A4",
     "type": "Sedan",
-    "capacity": 5,
+    "capacity": 4,
     "price": 85,
     "steering": "Automatic",
     "gasoline": 50,
     "reviews": 350,
     "stars": 4.5,
     "images": [
-      "/images/audi-a4.jpg"
+      "/images/audi-a4.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 11,
+    "name": "Hyundai Kona",
+    "type": "Hatchback",
+    "capacity": 4,
+    "price": 55,
+    "steering": "Automatic",
+    "gasoline": 45,
+    "reviews": 320,
+    "stars": 4.0,
+    "images": [
+      "/images/hyundai-kona.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 12,
+    "name": "Mercedes-Benz GLE",
+    "type": "SUV",
+    "capacity": 6,
+    "price": 120,
+    "steering": "Automatic",
+    "gasoline": 55,
+    "reviews": 420,
+    "stars": 4.7,
+    "images": [
+      "/images/mercedes-benz-gle.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 13,
+    "name": "Chevrolet Camaro",
+    "type": "Sport",
+    "capacity": 2,
+    "price": 90,
+    "steering": "Manual",
+    "gasoline": 65,
+    "reviews": 390,
+    "stars": 4.3,
+    "images": [
+      "/images/chevrolet-camaro.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 14,
+    "name": "Volkswagen Golf",
+    "type": "Hatchback",
+    "capacity": 4,
+    "price": 60,
+    "steering": "Automatic",
+    "gasoline": 50,
+    "reviews": 350,
+    "stars": 4.1,
+    "images": [
+      "/images/vw-golf.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 15,
+    "name": "Toyota Sienna",
+    "type": "MPV",
+    "capacity": 6,
+    "price": 85,
+    "steering": "Automatic",
+    "gasoline": 60,
+    "reviews": 300,
+    "stars": 4.3,
+    "images": [
+      "/images/toyota-sienna.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 16,
+    "name": "BMW M3",
+    "type": "Coupe",
+    "capacity": 4,
+    "price": 110,
+    "steering": "Automatic",
+    "gasoline": 60,
+    "reviews": 450,
+    "stars": 4.8,
+    "images": [
+      "/images/bmw-m3.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 17,
+    "name": "Mercedes A180",
+    "type": "Hatchback",
+    "capacity": 2,
+    "price": 95,
+    "steering": "Manual",
+    "gasoline": 50,
+    "reviews": 380,
+    "stars": 4.5,
+    "images": [
+      "/images/mercedes-a180.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 18,
+    "name": "Honda Civic Type R",
+    "type": "Hatchback",
+    "capacity": 4,
+    "price": 80,
+    "steering": "Manual",
+    "gasoline": 55,
+    "reviews": 400,
+    "stars": 4.6,
+    "images": [
+      "/images/honda-civic-type-r.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 19,
+    "name": "Audi Q5",
+    "type": "SUV",
+    "capacity": 6,
+    "price": 130,
+    "steering": "Automatic",
+    "gasoline": 65,
+    "reviews": 460,
+    "stars": 4.9,
+    "images": [
+      "/images/audi-q5.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
+    ],
+    "description": "Compact luxury sedan with a sleek design...",
+    "details": "Blends performance with advanced technology..."
+  },
+  {
+    "id": 20,
+    "name": "Ford Explorer",
+    "type": "MPV",
+    "capacity": 6,
+    "price": 95,
+    "steering": "Automatic",
+    "gasoline": 70,
+    "reviews": 370,
+    "stars": 4.4,
+    "images": [
+      "/images/ford-explorer.png",
+      "/images/nissan-gtr-interior2.png",
+      "/images/nissan-gtr-interior.png"
     ],
     "description": "Compact luxury sedan with a sleek design...",
     "details": "Blends performance with advanced technology..."
