@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: white; /* Ensure header/footer/sidebar remains white */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 .app {
@@ -21,22 +21,23 @@ body {
 
 .main-wrapper {
   background-color: #F6F7F9; /* Background for main content */
-  min-height: 100%; /* Ensure it stretches fully */
-  padding: 0rem; /* Add spacing inside */
+  min-height: calc(100vh - 480px); /* Ensure it stretches fully */
+  padding: 0rem;
+  display: flex;/* Add spacing inside */
   flex: 1;
 }
+
 
 .main-content {
   flex: 1;
   display: flex;
-  gap: 2rem; /* Space between filters and main grid */
+  gap: 2rem;
 }
 
 .car-grid-wrapper {
   flex: 1; /* Ensures the grid takes up space */
   background-color: #F6F7F9; /* Matches the main-wrapper */
-  padding: 2rem;
   border-radius: 8px; /* Optional: Rounded corners */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Optional: Subtle shadow */
-  overflow-x: hidden; /* Prevent grid from causing horizontal scrolling */
+  overflow-x: hidden;
 }

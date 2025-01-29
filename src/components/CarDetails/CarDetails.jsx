@@ -4,114 +4,198 @@ import carsData from "../../car_data/cars.json";
 import { Box, Typography, Button, CardMedia, IconButton } from "@mui/material";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import Rating from "@mui/material/Rating";
-import styles from "./CarDetails.module.css";
-import bgStyle from "../../contexts/bg.png"
+import bgImage from "../../contexts/bg.png"
 
 const CarDetails = ({ favorites, onAddToFavorites }) => {
-    const { id } = useParams(); // Extract car ID from the URL
-    const [car, setCar] = useState(null);
-    const [selectedImage, setSelectedImage] = useState("");
+  const { id } = useParams();
+  const [car, setCar] = useState(null);
+  const [selectedImage, setSelectedImage] = useState("");
 
-    useEffect(() => {
-        const foundCar = carsData.find((c) => c.id === parseInt(id));
-        if (foundCar) {
-            setCar(foundCar);
-            setSelectedImage(foundCar.images[0]); // Set default image
-        }
-    }, [id]);
+  useEffect(() => {
+    const foundCar = carsData.find((c) => c.id === parseInt(id));
+    if (foundCar) {
+      setCar(foundCar);
+      setSelectedImage(foundCar.images[0]);
+    }
+  }, [id]);
 
-    if (!car) return <Typography variant="h5">Car not found</Typography>;
+  if (!car) return <Typography variant="h5">Car not found</Typography>;
 
-    const isFavorite = favorites.some((fav) => fav.id === car.id);
+  const isFavorite = favorites.some((fav) => fav.id === car.id);
 
-    return (
-        <Box className={styles.container}>
-            {/* 🔹 NEW: Car Details Header */}
-            <Box className={styles.carDetailsHeader}>
-                <Typography variant="h5" className={styles.headerText}>
-                    Car Details
-                </Typography>
-            </Box>
+  return (
+    <Box sx={{ maxWidth: "1200px", margin: "0 auto", padding: "2rem" }}>
+      <Box sx={{ marginBottom: "2rem" }}>
+        <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+          Car Details
+        </Typography>
+      </Box>
 
-            {/* Car Details Content (Image + Description) */}
-            <Box className={styles.content}>
-                {/* Left Section - Image */}
-                <Box className={styles.imageSection}>
-                    <Box className={styles.imageContainer} sx={{
-                        backgroundImage: `url(${bgStyle})`,
-                        backgroundSize: '442px',
-                        backgroundRepeat: 'repeat',
-                    }}>
-                        <Typography variant="h5" className={styles.imageTitle}>
-                            Sports car with the best design and acceleration
-                        </Typography>
-                        <Typography variant="body2" className={styles.imageDescription}>
-                            Safety and comfort while driving a futuristic and elegant sports car
-                        </Typography>
-                        <CardMedia
-                            component="img"
-                            image={process.env.PUBLIC_URL + selectedImage}
-                            alt={car.name}
-                            className={styles.mainImage}
-                        />
-                    </Box>
+      <Box sx={{ display: "flex", gap: "2rem", alignItems: "stretch" }}>
+        {/* Image Section */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "492px",
+            height: "508px",
+            borderRadius: "10px 0 0 0",
+          }}
+        >
+          {/* Main Image with Blue Background and Description */}
+          <Box
+            sx={{
+              position: "relative",
+              width: "492px",
+              height: "360px",
+              borderRadius: "10px 0 0 0",
+              backgroundColor: "#3563E9", // Blue background
+              backgroundImage: `url(${bgImage})`,
+              color: "white",
+              padding: "1.5rem",
+              textAlign: "center",
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h5" sx={{ fontWeight: 600 }}>
+              Sports car with the best design and acceleration
+            </Typography>
+            <Typography variant="body2">
+              Safety and comfort while driving a futuristic and elegant sports car
+            </Typography>
+            <CardMedia
+              component="img"
+              image={process.env.PUBLIC_URL + selectedImage}
+              alt={car.name}
+              sx={{
+                width: "400px",
+                height: "350px",
+                objectFit: "contain",
+                borderRadius: "10px 0 0 0",
+              }}
+            />
+          </Box>
 
-                    {/* Thumbnails */}
-                    <Box className={styles.thumbnailContainer}>
-                        {car.images.slice(0, 3).map((img, index) => (
-                            <CardMedia
-                                key={index}
-                                component="img"
-                                image={process.env.PUBLIC_URL + img}
-                                alt={`${car.name} thumbnail`}
-                                className={`${styles.thumbnail} ${selectedImage === img ? styles.activeThumbnail : ""
-                                    }`}
-                                onClick={() => setSelectedImage(img)}
-                            />
-                        ))}
-                    </Box>
-                </Box>
-
-                {/* Right Section - Car Details */}
-                <Box className={styles.detailsSection}>
-                    <Typography variant="h4">{car.name}</Typography>
-
-                    {/* Rating */}
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                        <Rating name="read-only" value={car.stars} readOnly />
-                        <Typography variant="body2" color="textSecondary">
-                            ({car.reviews} Reviews)
-                        </Typography>
-                    </Box>
-
-                    <Typography variant="body1" className={styles.description}>
-                        {car.details}
-                    </Typography>
-
-                    {/* Car Specifications */}
-                    <Box className={styles.specs}>
-                        <Typography>Type: <b>{car.type}</b></Typography>
-                        <Typography>Steering: <b>{car.steering}</b></Typography>
-                        <Typography>Capacity: <b>{car.capacity} People</b></Typography>
-                        <Typography>Gasoline: <b>{car.gasoline}L</b></Typography>
-                    </Box>
-
-                    {/* Favorite Button */}
-                    <IconButton onClick={() => onAddToFavorites(car)}>
-                        {isFavorite ? <MdFavorite size={30} color="#ff4757" /> : <MdFavoriteBorder size={30} />}
-                    </IconButton>
-
-                    {/* Price & Rent Button */}
-                    <Box className={styles.priceSection}>
-                        <Typography variant="h5">${car.price}.00/day</Typography>
-                        <Button variant="contained" color="primary" disabled>
-                            Rent Now
-                        </Button>
-                    </Box>
-                </Box>
-            </Box>
+          {/* Thumbnails */}
+          <Box sx={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
+            {car.images.slice(0, 3).map((img, index) => (
+              <Box
+                key={index}
+                sx={{
+                  width: "148px",
+                  height: "124px",
+                  borderRadius: "10px 0 0 0",
+                  overflow: "hidden",
+                  backgroundColor: index === 0 ? "#3563E9" : "transparent",
+                  backgroundImage: index === 0 ? `url(${bgImage})` : "none", // Blue background for first thumbnail
+                  padding: "5px",
+                  border:
+                    selectedImage === img
+                      ? "2px solid #3563E9"
+                      : "2px solid transparent",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onClick={() => setSelectedImage(img)}
+              >
+                <CardMedia
+                  component="img"
+                  image={process.env.PUBLIC_URL + img}
+                  alt={`${car.name} thumbnail`}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px 0 0 0",
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
         </Box>
-    );
+
+        {/* Details Section */}
+        <Box
+          sx={{
+            width: "492px",
+            height: "508px",
+            borderRadius: "10px 0 0 0",
+            background: "#ffffff",
+            padding: "2rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* Header */}
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+              {car.name}
+            </Typography>
+            <IconButton onClick={() => onAddToFavorites(car)}>
+              {isFavorite ? (
+                <MdFavorite size={30} color="#ff4757" />
+              ) : (
+                <MdFavoriteBorder size={30} />
+              )}
+            </IconButton>
+          </Box>
+
+          {/* Rating */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <Rating value={car.stars} readOnly precision={0.5} />
+            <Typography variant="body2" sx={{ color: "#6b6b6b" }}>
+              ({car.reviews} Reviews)
+            </Typography>
+          </Box>
+
+          {/* Description */}
+          <Typography variant="body1" sx={{ color: "#4a4a4a", lineHeight: 1.6 }}>
+            {car.details}
+          </Typography>
+
+          {/* Specifications */}
+          <Box sx={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1.5rem" }}>
+            <Box>
+              <Typography sx={{ color: "#8f8f8f", fontSize: "0.9rem" }}>Type Car</Typography>
+              <Typography sx={{ fontWeight: 600, color: "#2d2d2d" }}>{car.type}</Typography>
+            </Box>
+            <Box>
+              <Typography sx={{ color: "#8f8f8f", fontSize: "0.9rem" }}>Steering</Typography>
+              <Typography sx={{ fontWeight: 600, color: "#2d2d2d" }}>{car.steering}</Typography>
+            </Box>
+            <Box>
+              <Typography sx={{ color: "#8f8f8f", fontSize: "0.9rem" }}>Capacity</Typography>
+              <Typography sx={{ fontWeight: 600, color: "#2d2d2d" }}>{car.capacity} People</Typography>
+            </Box>
+            <Box>
+              <Typography sx={{ color: "#8f8f8f", fontSize: "0.9rem" }}>Gasoline</Typography>
+              <Typography sx={{ fontWeight: 600, color: "#2d2d2d" }}>{car.gasoline}L</Typography>
+            </Box>
+          </Box>
+
+          {/* Bottom Section */}
+          <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "2rem" }}>
+            <Box sx={{ display: "flex", alignItems: "baseline" }}>
+              <Typography sx={{ fontSize: "1.75rem", fontWeight: 700, color: "#2d2d2d" }}>
+                ${car.price}.00
+              </Typography>
+              <Typography sx={{ color: "#8f8f8f", marginLeft: "0.5rem" }}>/days</Typography>
+            </Box>
+            <Button variant="contained" sx={{ backgroundColor: "#3563E9", fontWeight: 600 }}>
+              Rent Now
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
 };
 
 export default CarDetails;

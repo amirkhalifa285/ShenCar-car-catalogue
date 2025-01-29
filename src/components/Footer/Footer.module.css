@@ -1,48 +1,36 @@
-/* Footer.module.css */
-
 /* Footer Container */
 .footer {
   background-color: white;
-  padding: 0.8rem 1.5rem;
-  /* Reduced padding to make it smaller */
-  border-top: 1px solid #ddd;
-  /* position: sticky; */
-  bottom: 0;
+  height: 480px;
   width: 100%;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /* Ensures spacing is minimal */
-  font-size: 0.875rem;
-  /* Smaller text for less space usage */
+  justify-content: space-between; /* Ensure even spacing */
+  padding: 2rem 0; /* Adjust padding */
 }
 
 /* Footer Content Wrapper */
 .footerContainer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Align everything from the left */
   align-items: flex-start;
-  max-width: 1200px;
+  max-width: 1440px;
+  height: 100%;
   margin: 0 auto;
-  gap: 1rem;
+  padding: 0 2rem;
 }
 
-/* Left Section */
+/* Left Section: Logo & Description */
 .footerLeft {
-  flex: 0 0 auto; /* Prevents resizing */
-  max-width: 30%;
+  width: 250px; /* Matches content size */
   text-align: left;
-  margin-left: 0 !important; /* Forces it to stay on the far left */
-  padding-left: 0 !important; /* Ensures no unwanted padding */
+  margin: 0; /* Remove extra margins */
 }
 
 .footerTitle {
   font-size: 1.5rem;
   font-weight: bold;
   color: #3563E9;
-  /* Blue color */
   margin-bottom: 0.5rem;
 }
 
@@ -52,20 +40,21 @@
   line-height: 1.5;
 }
 
-/* Right Section */
-.footerColumns {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  /* Allows columns to wrap on smaller screens */
-  gap: 1rem;
-  flex: 2;
+/* Space Between Left Section and Columns */
+.footerSpacing {
+  width: 452px;
 }
 
+/* Columns Section */
+.footerColumns {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px; /* Space between the three columns */
+}
+
+/* Individual Columns */
 .footerColumn {
-  flex: 1;
-  min-width: 150px;
-  /* Minimum column width */
+  width: 152px; /* Set the exact width */
 }
 
 .footerColumn h4 {
@@ -83,7 +72,7 @@
 .footerColumn ul li {
   font-size: 0.875rem;
   color: #666;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .footerColumn ul li:hover {
@@ -91,30 +80,17 @@
   cursor: pointer;
 }
 
-.footerSocials ul li {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.footerSocials ul li svg {
-  font-size: 1rem;
-  color: #666;
-}
-
-.footerSocials ul li:hover svg {
-  color: #000;
-}
-
 /* Bottom Section */
 .footerBottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.75rem;
-  color: #999;
-  margin-top: 0.5rem;
   width: 100%;
+  border-top: 1px solid #ddd;
+  font-size: 0.875rem;
+  color: #999;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .footerBottom a {
@@ -126,80 +102,30 @@
   text-decoration: underline;
 }
 
-/* Media Queries for Improved Responsiveness */
-
-/* For screens between 1024px and 1366px (Intermediate Sizes) */
-@media screen and (max-width: 1366px) {
-  .footerContainer {
-    gap: 1.5rem;
-    /* Adjust spacing */
-  }
-
-  .footerLeft {
-    max-width: 30%;
-    /* Reduce left section width */
-  }
-
-  .footerColumns {
-    justify-content: center;
-    /* Center columns for better spacing */
-    gap: 1.5rem;
-  }
-
-  .footerColumn {
-    min-width: 180px;
-    /* Slightly increase column width */
-  }
-}
-
-/* For screens larger than 1366px (Wide Screens) */
-@media screen and (min-width: 1367px) {
-  .footerContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* Align all footer items to the top */
-    gap: 3rem;
-  }
-
-  .footerLeft {
-    max-width: 30%;
-    margin-left: 0 !important;
-    /* Ensure it sticks to the far left */
-    align-self: flex-start;
-    /* Ensure it doesn't move down */
-  }
-
-  .footerColumns {
-    display: flex;
-    flex-grow: 1;
-    /* Prevents it from shrinking */
-    justify-content: space-between;
-    /* Distributes other columns */
-  }
-
-  .footerColumn {
-    min-width: 200px;
-  }
-}
-
-/* For screens smaller than 1024px (Tablets and Phones) */
+/* Responsive Design */
 @media screen and (max-width: 1024px) {
   .footerContainer {
     flex-direction: column;
-    /* Stack sections vertically */
     align-items: center;
-    /* Center-align everything */
+    text-align: center;
   }
 
   .footerLeft {
-    text-align: center;
     max-width: 100%;
-    /* Allow full width */
     margin-bottom: 1rem;
   }
 
+  .footerSpacing {
+    display: none; /* Remove extra space on mobile */
+  }
+
   .footerColumns {
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

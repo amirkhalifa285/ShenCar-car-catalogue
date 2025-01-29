@@ -1,7 +1,8 @@
 .carGridWrapper {
     width: 100%;
-    padding: 0rem;
-    box-sizing: border-box; /* Ensure padding doesn't add overflow */
+    box-sizing: border-box;
+    overflow-x: hidden;
+    height: 1600px;
   }
   
   .carCatalogueHeader {
@@ -19,10 +20,14 @@
   
   .carGrid {
     display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(317px, 1fr)); /* Responsive grid */
     justify-content: center; /* Center the grid items */
-    max-width: 100%; /* Prevent grid from exceeding the container */
+    max-width: 100%;
+    align-items: start;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
   }
   
   .noResults {

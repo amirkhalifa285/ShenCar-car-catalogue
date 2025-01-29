@@ -1,12 +1,12 @@
 import React from "react";
 import { FaDiscord, FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
-import styles from "./Footer.module.css"; // Import the CSS module
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        {/* Left Section: ShenCarCar */}
+        {/* Left Section: Brand Name & Description */}
         <div className={styles.footerLeft}>
           <h1 className={styles.footerTitle}>ShenCarCar</h1>
           <p className={styles.footerDescription}>
@@ -14,7 +14,10 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Right Section: Columns */}
+        {/* Fixed Spacing Between Left and Columns */}
+        <div className={styles.footerSpacing}></div>
+
+        {/* Middle Section: Footer Columns */}
         <div className={styles.footerColumns}>
           {/* About Section */}
           <div className={styles.footerColumn}>
@@ -39,27 +42,19 @@ const Footer = () => {
           </div>
 
           {/* Socials Section */}
-          <div className={`${styles.footerColumn} ${styles.footerSocials}`}>
+          <div className={styles.footerColumn}>
             <h4>Socials</h4>
             <ul>
-              <li>
-                <FaDiscord /> Discord
-              </li>
-              <li>
-                <FaInstagram /> Instagram
-              </li>
-              <li>
-                <FaTwitter /> Twitter
-              </li>
-              <li>
-                <FaFacebook /> Facebook
-              </li>
+              <li><FaDiscord /> Discord</li>
+              <li><FaInstagram /> Instagram</li>
+              <li><FaTwitter /> Twitter</li>
+              <li><FaFacebook /> Facebook</li>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom Section: Copyright */}
+      {/* Bottom Section: Copyright & Links */}
       <div className={styles.footerBottom}>
         <p>©2025 ShenCarCar. All rights reserved.</p>
         <div>

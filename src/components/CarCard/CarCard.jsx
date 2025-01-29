@@ -32,18 +32,24 @@ const CarCard = ({ car, onAddToFavorites, favorites = [] }) => {
     <Card
       onClick={() => navigate(`/car/${car.id}`)} // Navigate to car details page
       sx={{
-        width: 320,
-        height: "100%",
+        width: "100%", // Responsive width
+        maxWidth: 317, // Maintain max width
+        height: "auto", // Allow dynamic height
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
         position: "relative",
         overflow: "hidden",
+        borderRadius: "10px 0 0 0",
         cursor: "pointer",
         "&:hover": {
           boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
         },
-      }}
+        "@media (max-width: 768px)": {
+          width: "100%",
+          maxWidth: "100%", // Full-width on smaller screens
+        },
+      }}      
     >
       <CardHeader
         title={car.name}

@@ -1,11 +1,12 @@
 .sidebar {
   background: #ffffff;
-  padding: 3rem;
+  padding: 2rem;
   border-right: 1px solid #dfe6e9;
   min-width: 280px;
   position: sticky;
   max-width: 100%;
   box-sizing: border-box;
+  height: auto;
 }
 
 .filterGroup {
