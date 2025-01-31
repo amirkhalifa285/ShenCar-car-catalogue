@@ -1,11 +1,14 @@
 import styles from "./Header.module.css";
 import { MdFavorite, MdSearch } from "react-icons/md";
+import { Link } from "react-router-dom"
 
 const Header = ({ onToggleFavorites, showFavorites, searchQuery, setSearchQuery }) => {
   return (
     <header className={styles.header}>
-      {/* Logo */}
-      <div className={styles.logo}>ShenCarCar</div>
+      {/* Logo wrapped in a Link */}
+      <Link to="/" className={styles.logoLink}>
+        <div className={styles.logo}>ShenCarCar</div>
+      </Link>
 
       {/* Search Bar */}
       <div className={styles.searchContainer}>
@@ -22,9 +25,8 @@ const Header = ({ onToggleFavorites, showFavorites, searchQuery, setSearchQuery 
       {/* Heart Icon */}
       <MdFavorite
         size={24}
-        className={`${styles.favoriteIcon} ${
-          showFavorites ? styles.favoriteActive : ""
-        }`}
+        className={`${styles.favoriteIcon} ${showFavorites ? styles.favoriteActive : ""
+          }`}
         onClick={onToggleFavorites}
         title={showFavorites ? "Show All Cars" : "Show Favorites"}
       />

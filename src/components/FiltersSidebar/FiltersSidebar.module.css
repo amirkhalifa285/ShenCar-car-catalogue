@@ -41,8 +41,8 @@
 }
 @media (max-width: 1024px) {
   .sidebar {
-    height: auto; /* Allow flexible height on smaller screens */
-    min-height: 100vh; /* Stretch fully */
+    height: auto; 
+    min-height: 100vh;
   }
 }
 /* Responsive */

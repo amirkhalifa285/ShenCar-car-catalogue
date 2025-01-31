@@ -1,4 +1,3 @@
-/* Header.module.css */
 .header {
   display: flex;
   align-items: center;
@@ -18,20 +17,20 @@
   white-space: nowrap;
 }
 
+.logoLink {
+  text-decoration: none; 
+}
+
 .searchContainer {
   position: relative;
   flex: 1;
-  /* Takes the remaining space */
   max-width: 600px;
-  /* Limit maximum width for better alignment */
   margin-left: 1rem;
-  /* Adds spacing between the logo and search bar */
 }
 
 .searchInput {
   width: 100%;
   padding: 0.8rem 3rem 0.8rem 1.5rem;
-  /* Adjust padding to fit the icon inside */
   border: 2px solid #dfe6e9;
   border-radius: 30px;
   font-size: 1rem;
@@ -47,13 +46,11 @@
 .searchIcon {
   position: absolute;
   right: 1rem;
-  /* Pushes the icon inside the search bar */
   top: 50%;
   transform: translateY(-50%);
   color: #636e72;
   font-size: 1.2rem;
   pointer-events: none;
-  /* Prevents interaction with the icon */
 }
 
 .favoriteIcon {
@@ -61,15 +58,11 @@
   cursor: pointer;
   transition: color 0.3s;
   margin-left: auto;
-  /* Pushes the heart icon to the far right */
 }
 
 .favoriteActive {
   color: #ff4757;
-  /* Turns red when active */
 }
-
-
 
 @media (max-width: 768px) {
   .header {

@@ -30,8 +30,8 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
         alignItems: "stretch",
         paddingLeft: "32px",
         paddingRight: "32px",
-        flexWrap: "wrap", // Allow wrapping for smaller screens
-        minHeight: "auto", // Let content expand dynamically
+        flexWrap: "wrap", 
+        minHeight: "auto", 
       }}>
       <Box sx={{ marginBottom: "2rem" }}>
         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
@@ -58,7 +58,7 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
               width: "468px",
               height: "360px",
               borderRadius: "10px 0 0 0",
-              backgroundColor: "#3563E9", // Blue background
+              backgroundColor: "#3563E9", 
               backgroundImage: `url(${bgImage})`,
               color: "white",
               padding: "1.5rem",
@@ -100,7 +100,7 @@ const CarDetails = ({ favorites, onAddToFavorites }) => {
                   borderRadius: "10px 0 0 0",
                   overflow: "hidden",
                   backgroundColor: index === 0 ? "#3563E9" : "transparent",
-                  backgroundImage: index === 0 ? `url(${bgImage})` : "none", // Blue background for first thumbnail
+                  backgroundImage: index === 0 ? `url(${bgImage})` : "none", 
                   padding: "5px",
                   border:
                     selectedImage === img

@@ -20,7 +20,7 @@ const CarGrid = ({ cars, onAddToFavorites, favorites }) => {
             key={car.id}
             car={car}
             onAddToFavorites={onAddToFavorites}
-            favorites={favorites} // Pass favorites to each CarCard
+            favorites={favorites} 
           />
         ))}
       </div>

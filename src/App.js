@@ -23,7 +23,7 @@ function App() {
   const [showFavorites, setShowFavorites] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filters, setFilters] = useState({
-    types: ["Sport", "SUV", "MPV"],
+    types: ["Sport", "SUV", "MPV", "Sedan", "Coupe", "Hatchback"],
     capacities: [2, 4, 6],
     maxPrice: 200,
   });
@@ -48,14 +48,16 @@ function App() {
     setShowFavorites((prev) => !prev);
   };
 
-  // Filtering logic with default behavior if filters are empty
   const filteredCars = showFavorites
-    ? favorites.filter((car) => car.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    ? favorites.filter((car) =>
+        car.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
     : cars.filter(
         (car) =>
           car.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
           (filters.types.length === 0 || filters.types.includes(car.type)) &&
-          (filters.capacities.length === 0 || filters.capacities.includes(car.capacity)) &&
+          (filters.capacities.length === 0 ||
+            filters.capacities.includes(car.capacity)) &&
           car.price <= filters.maxPrice
       );
 
@@ -77,11 +79,22 @@ function App() {
                 <Routes>
                   <Route
                     path="/"
-                    element={<CarGrid cars={filteredCars} onAddToFavorites={handleAddToFavorites} favorites={favorites} />}
+                    element={
+                      <CarGrid
+                        cars={filteredCars}
+                        onAddToFavorites={handleAddToFavorites}
+                        favorites={favorites}
+                      />
+                    }
                   />
                   <Route
                     path="/car/:id"
-                    element={<CarDetails favorites={favorites} onAddToFavorites={handleAddToFavorites} />}
+                    element={
+                      <CarDetails
+                        favorites={favorites}
+                        onAddToFavorites={handleAddToFavorites}
+                      />
+                    }
                   />
                 </Routes>
               </div>

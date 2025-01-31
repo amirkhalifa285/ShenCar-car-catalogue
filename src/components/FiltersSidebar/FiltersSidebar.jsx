@@ -1,34 +1,39 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./FiltersSidebar.module.css";
 
 const FiltersSidebar = ({ filters, setFilters }) => {
-  useEffect(() => {
-    setFilters({ types: [], capacities: [], maxPrice: 200 });
-  }, [setFilters]);
-
-  // Handle Type Filter
   const handleTypeChange = (type) => {
     setFilters((prevFilters) => {
-      const updatedTypes = prevFilters.types.includes(type)
-        ? prevFilters.types.filter((t) => t !== type)
-        : [...prevFilters.types, type];
+      let updatedTypes = [];
+      if (prevFilters.types.includes(type)) {
+        if (prevFilters.types.length === 1) {
+          return prevFilters;
+        }
+        updatedTypes = prevFilters.types.filter((t) => t !== type);
+      } else {
+        updatedTypes = [...prevFilters.types, type];
+      }
       return { ...prevFilters, types: updatedTypes };
     });
   };
 
-  // Handle Capacity Filter
   const handleCapacityChange = (capacity) => {
     setFilters((prevFilters) => {
-      const updatedCapacities = prevFilters.capacities.includes(capacity)
-        ? prevFilters.capacities.filter((c) => c !== capacity)
-        : [...prevFilters.capacities, capacity];
+      let updatedCapacities = [];
+      if (prevFilters.capacities.includes(capacity)) {
+        updatedCapacities = prevFilters.capacities.filter((c) => c !== capacity);
+      } else {
+        updatedCapacities = [...prevFilters.capacities, capacity];
+      }
       return { ...prevFilters, capacities: updatedCapacities };
     });
   };
 
-  // Handle Price Range Filter
   const handlePriceChange = (event) => {
-    setFilters((prevFilters) => ({ ...prevFilters, maxPrice: event.target.value }));
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      maxPrice: Number(event.target.value),
+    }));
   };
 
   return (

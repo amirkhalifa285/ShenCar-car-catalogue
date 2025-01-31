@@ -24,17 +24,17 @@ const CarCard = ({ car, onAddToFavorites, favorites = [] }) => {
   const isFavorite = Array.isArray(favorites) && favorites.some((fav) => fav.id === car.id);
 
   const handleFavoriteClick = (e) => {
-    e.stopPropagation(); // Prevent navigation when clicking the favorite button
+    e.stopPropagation(); 
     onAddToFavorites(car);
   };
 
   return (
     <Card
-      onClick={() => navigate(`/car/${car.id}`)} // Navigate to car details page
+      onClick={() => navigate(`/car/${car.id}`)} 
       sx={{
-        width: "100%", // Responsive width
-        maxWidth: 317, // Maintain max width
-        height: "auto", // Allow dynamic height
+        width: "100%",
+        maxWidth: 317, 
+        height: "auto",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
@@ -47,7 +47,7 @@ const CarCard = ({ car, onAddToFavorites, favorites = [] }) => {
         },
         "@media (max-width: 768px)": {
           width: "100%",
-          maxWidth: "100%", // Full-width on smaller screens
+          maxWidth: "100%",
         },
       }}      
     >
